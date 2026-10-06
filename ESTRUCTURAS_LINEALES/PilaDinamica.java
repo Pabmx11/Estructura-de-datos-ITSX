@@ -1,29 +1,27 @@
 package Estructuras_lineales;
 
 public class PilaDinamica {
-    Nodo cima; //Declarando un nodo llamado cima. El control remoto que apunta al elemento de hasta arriba
+    Nodo cima; // Declarando un nodo llamado cima. El control remoto que apunta al elemento de hasta arriba
 
     // Constructor de la pila
     public PilaDinamica() {
-
         this.cima = null; // Arranca vacía
     }
 
     // Método PUSH (Meter elemento arriba)
     void push(int x) {
-        Nodo nuevo = new Nodo(x); // 1. Creamos el nuevo nodo. Ojo tiene las mismas pripiedades que nodo.
-        nuevo.siguiente = cima;   // 2. Como tiene las mismas propiedades que nodo no necesitamos llamar a la clase.
-                                  // El nuevo atrapa al viejo de la cima
-        cima = nuevo;             // 3. Actualizamos la cima. El nuevo se convierte oficialmente en la cima
+        Nodo nuevo = new Nodo(x); // 1. Creamos el nuevo nodo con el dato recibido.
+        nuevo.siguiente = cima;   // 2. El nuevo nodo apunta hacia la cima actual (enlaza al nodo anterior).
+        cima = nuevo;             // 3. Actualizamos la cima para que el nuevo nodo sea ahora el tope.
     }
-// nota: nuevo.siguiente es la flecha
+
     // Método POP (Sacar el elemento de arriba)
     void pop() {
-        if (cima != null) {
+        if (!isEmpty()) { // Comprueba que la pila contenga al menos un nodo
             System.out.println("Sacaste de la pila: " + cima.dato);
-            cima = cima.siguiente; // La cima se baja al siguiente nodo
+            cima = cima.siguiente; // La cima baja al nodo que estaba debajo, desvinculando el superior
         } else {
-            System.out.println("¡Pila dinámica vacía!");
+            System.out.println("¡Pila dinámica vacía!"); // Control de subdesbordamiento
         }
     }
 
@@ -36,6 +34,22 @@ public class PilaDinamica {
             System.out.print(actual.dato + " ");
             actual = actual.siguiente; // Saltamos al siguiente nodo
         }
-        System.out.println();// salto de linea
+        System.out.println(); // Salto de línea
+    }
+
+    // Método isEmpty (Verificar si la pila está vacía)
+    boolean isEmpty() {
+        return cima == null; // Retorna true si la cima no apunta a ningún nodo, false en caso contrario
+    }
+
+    // Método PEEK (Consultar el valor en la cima sin desvincularlo)
+    int peek() {
+        if (!isEmpty()) { // Verificamos primero que la pila contenga datos
+            System.out.println("Elemento en la cima: " + cima.dato);
+            return cima.dato; // Retorna el dato almacenado en el nodo de la cima sin modificar los enlaces
+        } else {
+            System.out.println("¡Pila dinámica vacía!"); // Notifica en caso de que la pila no tenga nodos
+            return -1; // Valor por defecto si está vacía
+        }
     }
 }

@@ -1,23 +1,32 @@
-
 package Estructuras_lineales;
 
 public class Main {
     public static void main(String[] args) {
-        // 1. Creamos nuestra pila vacía usando el constructor
+        System.out.println("=== PRUEBA DE PILA DINÁMICA (PilaDinamica) ===");
         PilaDinamica miPila = new PilaDinamica();
 
-        System.out.println("=== INSERTANDO ELEMENTOS (PUSH) ===");
+        System.out.println("¿La pila está vacía?: " + miPila.isEmpty());
+
+        System.out.println("\n--- Insertando elementos (Push) ---");
         miPila.push(10);
         miPila.push(20);
         miPila.push(30);
+        miPila.mostrar();
 
-        // Mostramos cómo quedó la torre
-        miPila.mostrar(); // Debe mostrar: 30 20 10 (El 30 está en la cima porque fue el último en entrar)
+        System.out.println("\n--- Consultando la cima (Peek) ---");
+        miPila.peek();
 
-        System.out.println("\n=== SACANDO UN ELEMENTO (POP) ===");
-        miPila.pop(); // Debería sacar el 30
+        System.out.println("\n--- Extrayendo elemento (Pop) ---");
+        miPila.pop(); // Saca el 30
+        miPila.mostrar();
 
-        // Mostramos cómo quedó después del pop
-      //  miPila.mostrar(); // Debe mostrar: 20 10
+        System.out.println("\n--- Vaciando la pila ---");
+        miPila.pop();
+        miPila.pop();
+        miPila.mostrar();
+        System.out.println("¿La pila está vacía?: " + miPila.isEmpty());
+
+        System.out.println("\n--- Intento de subdesbordamiento (Underflow) ---");
+        miPila.pop();
     }
 }
