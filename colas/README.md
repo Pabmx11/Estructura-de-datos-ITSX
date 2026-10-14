@@ -3,7 +3,7 @@
 Práctica de la **Unidad 3 – Tarea 2** de la materia **Estructura de Datos**
 Instituto Tecnológico Superior de Xalapa · Docente: Víctor Hugo Vásquez Herrera
 
-**Alumno:** Pablo Hinojosa · **No. de control:** _(pendiente)_
+**Alumno:** Pablo Hinojosa 
 
 Implementación modular de tres tipos de cola en Java. Cada estructura tiene su propia clase **y su propio `Main` independiente** que la prueba en consola.
 
