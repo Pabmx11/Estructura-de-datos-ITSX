@@ -3,7 +3,11 @@
 Práctica de la **Unidad 5** de la materia **Estructura de Datos (AED-1026)**
 Instituto Tecnológico Superior de Xalapa · Docente: Víctor Hugo Vásquez Herrera
 
-**Alumno:** Pablo Ali Hinojosa de la Hidalga
+## Integrantes (práctica de Mezcla Directa)
+
+- Pablo Ali Hinojosa de la Hidalga
+- Jorge Angel Saldaña Morales
+- Rey Arturo Acosta Varela
 
 Implementación del algoritmo de ordenamiento por **Burbuja** (Bubble Sort) visto en clase, con la optimización de bandera: si en una pasada no hay intercambios, el arreglo ya está ordenado y el algoritmo termina. El proyecto también incluye **QuickSort** y la práctica de ordenamiento externo por **Mezcla Directa**.
 
@@ -85,12 +89,6 @@ Ordena dentro del mismo arreglo, así que solo usa memoria extra O(1).
 ## Mezcla Directa (ordenamiento externo)
 
 `MezclaDirectaPractica` lee dos archivos auxiliares, `f1.txt` y `f2.txt`, que traen bloques ordenados de tamaño `L`, los compara frente a frente y los intercala ordenados en `f3.txt`.
-
-### Integrantes
-
-- Pablo Ali Hinojosa de la Hidalga
-- Jorge Angel Saldaña Morales
-- Rey Arturo Acosta Varela
 
 ### Paso a paso en IntelliJ IDEA
 
