@@ -86,6 +86,12 @@ Ordena dentro del mismo arreglo, así que solo usa memoria extra O(1).
 
 `MezclaDirectaPractica` lee dos archivos auxiliares, `f1.txt` y `f2.txt`, que traen bloques ordenados de tamaño `L`, los compara frente a frente y los intercala ordenados en `f3.txt`.
 
+### Integrantes
+
+- Pablo Ali Hinojosa de la Hidalga
+- Jorge Angel Saldaña Morales
+- Rey Arturo Acosta Varela
+
 ### Paso a paso en IntelliJ IDEA
 
 1. **Clonar:** en IntelliJ, ir a *File → New → Project from Version Control*, pegar `https://github.com/Pabmx11/Estructura-de-datos-ITSX.git` y dar clic en **Clone**. También se puede clonar desde la terminal con `git clone` (ver arriba).
