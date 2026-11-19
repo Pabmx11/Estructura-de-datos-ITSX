@@ -9,7 +9,7 @@ Instituto Tecnológico Superior de Xalapa · Docente: Víctor Hugo Vásquez Herr
 - Jorge Angel Saldaña Morales
 - Rey Arturo Acosta Varela
 
-Implementación del algoritmo de ordenamiento por **Burbuja** (Bubble Sort) visto en clase, con la optimización de bandera: si en una pasada no hay intercambios, el arreglo ya está ordenado y el algoritmo termina. El proyecto también incluye **QuickSort** y la práctica de ordenamiento externo por **Mezcla Directa**.
+Implementación del algoritmo de ordenamiento por **Burbuja** (Bubble Sort) visto en clase, con la optimización de bandera: si en una pasada no hay intercambios, el arreglo ya está ordenado y el algoritmo termina. El proyecto también incluye **QuickSort**, **ShellSort** y la práctica de ordenamiento externo por **Mezcla Directa**.
 
 ## Estructura del proyecto
 
@@ -23,6 +23,8 @@ Metodos_de_Ordenamiento/
         ├── Main.java                  # Prueba de Burbuja
         ├── QuickSort.java             # ordenar(), particionar() e imprimirArreglo()
         ├── MainQuick.java             # Prueba de QuickSort
+        ├── ShellSort.java             # ordenar() e imprimirArreglo()
+        ├── MainShell.java             # Prueba de ShellSort
         └── MezclaDirectaPractica.java # intercalarBloques() y su main
 ```
 
@@ -57,22 +59,48 @@ javac -d out src/Metodos_de_Ordenamiento/*.java
 java -cp out Metodos_de_Ordenamiento.Main
 ```
 
-5. (Opcional) Ejecutar QuickSort:
+5. Ejecutar QuickSort:
 
 ```bash
 java -cp out Metodos_de_Ordenamiento.MainQuick
 ```
 
+6. Ejecutar ShellSort:
+
+```bash
+java -cp out Metodos_de_Ordenamiento.MainShell
+```
+
 ### Desde IntelliJ IDEA
 
-Abrir la carpeta `Metodos_de_Ordenamiento` con *File → Open*, abrir `src/Metodos_de_Ordenamiento/Main.java` y dar clic en **Run**.
+Abrir la carpeta `Metodos_de_Ordenamiento` con *File → Open*, abrir el `Main` que se quiera probar (`Main.java`, `MainQuick.java` o `MainShell.java`) dentro de `src/Metodos_de_Ordenamiento/` y dar clic en **Run**.
 
 ## Salida esperada
+
+Burbuja (`Main`):
 
 ```text
 Arreglo original:
 [6, 1, 5, 8, 3, 2, 7, 4]
 Arreglo ordenado:
+[1, 2, 3, 4, 5, 6, 7, 8]
+```
+
+QuickSort (`MainQuick`):
+
+```text
+Arreglo original:
+[6, 1, 5, 8, 3, 2, 7, 4]
+Arreglo ordenado con Quicksort:
+[1, 2, 3, 4, 5, 6, 7, 8]
+```
+
+ShellSort (`MainShell`):
+
+```text
+Arreglo original:
+[6, 1, 5, 8, 3, 2, 7, 4]
+Arreglo ordenado con Shellsort:
 [1, 2, 3, 4, 5, 6, 7, 8]
 ```
 
@@ -85,6 +113,16 @@ Arreglo ordenado:
 | Peor caso (arreglo en orden inverso) | O(n²) |
 
 Ordena dentro del mismo arreglo, así que solo usa memoria extra O(1).
+
+## QuickSort contra ShellSort
+
+| Aspecto | QuickSort | ShellSort |
+|---|---|---|
+| Mejor caso | O(n log n) | O(n log n) |
+| Caso promedio | O(n log n) | Depende de los saltos; en la práctica, muy por debajo de O(n²) |
+| Peor caso | O(n²) (con pivote en el último elemento, ocurre con un arreglo ya ordenado) | O(n²) con los saltos n/2, n/4, …, 1 |
+| Memoria extra | O(log n) en promedio por la recursión; O(n) en el peor caso | O(1) |
+| Estable | No | No |
 
 ## Mezcla Directa (ordenamiento externo)
 
